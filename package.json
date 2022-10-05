@@ -64,5 +64,8 @@
     "**/*.{js,ts,vue,html}": [
       "pnpm lintfix"
     ]
+  },
+  "dependencies": {
+    "vant": "^3.6.3"
   }
 }

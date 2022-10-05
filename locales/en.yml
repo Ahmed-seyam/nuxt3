@@ -70,3 +70,5 @@ others:
   copy: copy
   enabled: enabled
   disabled: disabled
+app:
+  name: 'username'

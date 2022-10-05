@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
 import { IntlifyModuleOptions } from '@intlify/nuxt3'
 import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -13,6 +12,9 @@ declare module '@nuxt/schema' {
 export default defineNuxtConfig({
   // server side rendering mode
   ssr: true,
+  imports: {
+    autoImport: true,
+  },
 
   // app
   app: {
@@ -53,7 +55,6 @@ export default defineNuxtConfig({
     'unplugin-icons/nuxt',
     '@intlify/nuxt3',
     '@pinia/nuxt',
-    '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxtjs/eslint-module',
     'nuxt-windicss',
@@ -61,6 +62,7 @@ export default defineNuxtConfig({
 
   // experimental features
   experimental: {
+    externalVue: true,
     reactivityTransform: false,
   },
 
@@ -87,7 +89,7 @@ export default defineNuxtConfig({
     vueI18n: {
       locale: 'en',
       fallbackLocale: 'en',
-      availableLocales: ['en', 'id', 'ja', 'ko'],
+      availableLocales: ['en', 'ar'],
     },
   },
 
@@ -108,16 +110,5 @@ export default defineNuxtConfig({
       },
     },
     scan: true,
-  },
-
-  // content
-  content: {
-    documentDriven: true,
-    markdown: {
-      mdc: true,
-    },
-    highlight: {
-      theme: 'github-dark',
-    },
   },
 })
